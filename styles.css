@@ -9,6 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color:#e94560;
 }
 
 div {
@@ -21,5 +22,7 @@ div {
     flex-wrap: wrap;
     width: 800px;
     height: 800px;
-    border: solid black
+    background-color: #f5f5f5;
 }
+
+/* #1a1a2e and #16213e */
