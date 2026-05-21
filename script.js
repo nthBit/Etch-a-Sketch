@@ -6,7 +6,11 @@ function createDynamicGrid(num) {
     for (let i = 0; i < (num ** 2); i++) {
         const div = document.createElement('div');
         div.addEventListener('mouseover', () => {
-            div.style.backgroundColor = "black";
+            // darken the colour by 10% each square
+            let red = Math.floor((Math.random() * 255)) + 1;
+            let green = Math.floor((Math.random() * 255)) + 1;
+            let blue = Math.floor((Math.random() * 255)) + 1;
+            div.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
         });
         div.style.width = `${800 / num}px`;
         div.style.height = `${800 / num}px`;
@@ -20,7 +24,7 @@ btn.textContent = 'Reset Grid';
 body.appendChild(btn);
 
 btn.addEventListener('click', () => {
-    let gridRows = '';
+    let gridRows;
     while (true) {
         gridRows = Number(prompt('Choose: 1 ≤ num ≤ 100.'));
         if (1 <= gridRows && gridRows <= 100) {
