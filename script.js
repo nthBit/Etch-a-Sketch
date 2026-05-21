@@ -3,14 +3,17 @@ const divContainer = document.createElement('div');
 divContainer.id = 'divContainer';
 
 function createDynamicGrid(num) {
+    let darkeningEffect = 10;
     for (let i = 0; i < (num ** 2); i++) {
         const div = document.createElement('div');
         div.addEventListener('mouseover', () => {
-            // darken the colour by 10% each square
             let red = Math.floor((Math.random() * 255)) + 1;
             let green = Math.floor((Math.random() * 255)) + 1;
             let blue = Math.floor((Math.random() * 255)) + 1;
-            div.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+            div.style.backgroundColor = `rgb(${red} ${green} ${blue} / ${darkeningEffect}%)`;
+            if (darkeningEffect < 100) {
+                darkeningEffect += 1;
+            }
         });
         div.style.width = `${800 / num}px`;
         div.style.height = `${800 / num}px`;
