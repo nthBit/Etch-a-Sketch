@@ -11,8 +11,8 @@ function createDynamicGrid(num) {
         div.style.width = `${800 / num}px`;
         div.style.height = `${800 / num}px`;
         divContainer.appendChild(div);
-        body.appendChild(divContainer);
     }
+    body.appendChild(divContainer);
 }
 
 const btn = document.createElement('button');
