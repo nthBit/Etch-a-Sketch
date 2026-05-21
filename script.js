@@ -20,12 +20,11 @@ btn.textContent = 'Reset Grid';
 body.appendChild(btn);
 
 btn.addEventListener('click', () => {
+    let gridRows = '';
     while (true) {
-        gridRows = prompt('Choose: 1 ≤ num ≤ 100.');
+        gridRows = Number(prompt('Choose: 1 ≤ num ≤ 100.'));
         if (1 <= gridRows && gridRows <= 100) {
             break;
-        } else {
-            continue;
         }
     }
     divContainer.replaceChildren();
